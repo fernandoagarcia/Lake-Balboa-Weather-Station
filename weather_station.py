@@ -204,6 +204,14 @@ def main():
                         # From http://wiki.wunderground.com/index.php/PWS_-_Upload_Protocol
                         print("Uploading data to Weather Underground")
                         # build a weather data object
+                        google_spreadsheet_data = {
+                            "id": wu_station_id,
+                            "date": "now",
+                            "temp": str(temp_f),
+                            "humidity": str(humidity),
+                            "baromin": str(pressure),
+                        }
+
                         weather_data = {
                             "action": "updateraw",
                             "ID": wu_station_id,
@@ -220,6 +228,12 @@ def main():
                             print("Server response:", html)
                             # do something
                             response.close()  # best practice to close the file
+
+                            google_sheet_url = 'https://script.google.com/macros/s/AKfycbwk3F0oazLdUdbGyRnOEoO0bCN7tTPIz7_RLqZFOqUELvmTU4I/exec' + ? + urlencode(google_spreadsheet_data)
+                            res = urllib2.urlopen(google_sheet_url)
+                            res_html = res.read()
+                            print("Server response:", res_html)
+                            res.close()
                         except:
                             print("Exception:", sys.exc_info()[0], SLASH_N)
                     else:
