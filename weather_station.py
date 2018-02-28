@@ -229,7 +229,7 @@ def main():
                             # do something
                             response.close()  # best practice to close the file
 
-                            google_sheet_url = 'https://script.google.com/macros/s/AKfycbwk3F0oazLdUdbGyRnOEoO0bCN7tTPIz7_RLqZFOqUELvmTU4I/exec' + ? + urlencode(google_spreadsheet_data)
+                            google_sheet_url = 'https://script.google.com/macros/s/AKfycbwk3F0oazLdUdbGyRnOEoO0bCN7tTPIz7_RLqZFOqUELvmTU4I/exec' + '?' + urlencode(google_spreadsheet_data)
                             res = urllib2.urlopen(google_sheet_url)
                             res_html = res.read()
                             print("Server response:", res_html)
