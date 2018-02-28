@@ -206,7 +206,7 @@ def main():
                         # build a weather data object
                         google_spreadsheet_data = {
                             "id": wu_station_id,
-                            "date": "now",
+                            "date": datetime.datetime.now(),
                             "temp": str(temp_f),
                             "humidity": str(humidity),
                             "baromin": str(pressure),
