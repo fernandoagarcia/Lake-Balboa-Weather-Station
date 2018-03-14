@@ -76,7 +76,7 @@ def main():
             else:
                 print ('Air fresh')
 
-            readVisible = sensor.readVisible()
+            readVisible = ir_uv_sensor.readVisible()
             IR = sensor.readIR()
             UV = sensor.readUV()
             uvIndex = UV / 100.0
