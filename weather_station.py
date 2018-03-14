@@ -65,7 +65,7 @@ def main():
             # Read the relative humidity
             humidity = temp_hum_pr.get_humidity()
             # Read the pressure
-            pressure = temp_hum_pr.get_pressure()
+            pressure = (temp_hum_pr.get_pressure() * 0.00029530)
 
             # Get sensor value
             air_sensor_value = grovepi.analogRead(air_sensor)
@@ -138,7 +138,7 @@ def main():
                             "dateutc": "now",
                             "tempf": str(temp_f),
                             "humidity": str(humidity),
-                            "baromin": str(pressure),
+                            "pressurei": str(pressure),
                         }
                         try:
                             #upload_url = WU_URL + "?" + urlencode(weather_data)
