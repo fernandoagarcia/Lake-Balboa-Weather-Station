@@ -47,6 +47,6 @@ setRGB(0,179,255)
 
 def testme():
     setText('I love you Negar ' + interval_count + ' times')
-    interval_count++
+    ++interval_count
 
 timer = timeinterval.start(1000, testme)
