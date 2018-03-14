@@ -65,7 +65,7 @@ def main():
             # Read the relative humidity
             humidity = temp_hum_pr.get_humidity()
             # Read the pressure
-            pressure = (temp_hum_pr.get_pressure() * 0.00029530)
+            pressure = round(temp_hum_pr.get_pressure() * 0.00029530)
 
             # Get sensor value
             air_sensor_value = grovepi.analogRead(air_sensor)
