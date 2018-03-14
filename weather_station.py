@@ -45,7 +45,7 @@ grovepi.pinMode(air_sensor, 'INPUT')
 ir_uv_sensor = SI1145.SI1145()
 setRGB(0,179,255)
 
-def testme
+def testme():
     setText('I love you Negar ' + interval_count + ' times')
     interval_count++
 
