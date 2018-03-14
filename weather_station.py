@@ -124,6 +124,7 @@ def main():
                             'date': datetime.datetime.now(),
                             'temp': str(temp_f),
                             'humidity': str(humidity),
+                            'baromin': str(pressure),
                             'air': str(air_sensor_value),
                             'ir': str(IR),
                             'uv': str(UV),
