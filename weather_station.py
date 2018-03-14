@@ -28,7 +28,7 @@ from config import Config
 MEASUREMENT_INTERVAL = 10  # minutes
 # Set to False when testing the code and/or hardware
 # Set to True to enable upload of weather data to Weather Underground
-WEATHER_UPLOAD = False
+WEATHER_UPLOAD = True
 # the weather underground URL used to upload weather data
 WU_URL = "http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php"
 SINGLE_HASH = "#"
@@ -140,12 +140,12 @@ def main():
                             "baromin": str(pressure),
                         }
                         try:
-                            upload_url = WU_URL + "?" + urlencode(weather_data)
-                            response = urllib2.urlopen(upload_url)
-                            html = response.read()
-                            print("Server response:", html)
+                            #upload_url = WU_URL + "?" + urlencode(weather_data)
+                            #response = urllib2.urlopen(upload_url)
+                            #html = response.read()
+                            #print("Server response:", html)
                             # do something
-                            response.close()  # best practice to close the file
+                            #response.close()  # best practice to close the file
 
                             google_sheet_url = 'https://script.google.com/macros/s/AKfycbw7j2UB76OLKf6mvwnKJTK4JP1HZCKxGnhxb_4d1ezK-mnQS_yw/exec' + '?' + urlencode(google_spreadsheet_data)
                             res = urllib2.urlopen(google_sheet_url)
