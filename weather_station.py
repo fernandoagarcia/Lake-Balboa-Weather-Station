@@ -197,9 +197,9 @@ print('Station ID:', wu_station_id)
 try:
     setText('Initializing Weather App')
     last_temp = temp_hum_pr.get_temperature_fahrenheit()
-    setText('Current temperature reading: ', last_temp)
+    setText('Current temperature reading: ' + str(last_temp))
 except:
-    setText('Unable to initialize Weather App', sys.exc_info()[0])
+    print('Unable to initialize Weather App', sys.exc_info()[0])
     sys.exit(1)
 
 setText('Initialization complete!')
