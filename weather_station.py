@@ -28,7 +28,7 @@ from config import Config
 MEASUREMENT_INTERVAL = 10  # minutes
 # Set to False when testing the code and/or hardware
 # Set to True to enable upload of weather data to Weather Underground
-WEATHER_UPLOAD = True
+WEATHER_UPLOAD = False
 # the weather underground URL used to upload weather data
 WU_URL = "http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php"
 SINGLE_HASH = "#"
