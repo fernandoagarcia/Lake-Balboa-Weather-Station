@@ -81,8 +81,7 @@ def main():
             UV = ir_uv_sensor.readUV()
             uvIndex = UV / 100.0
 
-            setText('Temp: {:5.3f} Hum: {:5.3f} Pres: {:5.3f}'.format(temp_f, humidity, pressure))
-            setText('\nAir: {:5.3f}, Visible: {:5.3f}, IR: {:5.3f}, UV: {:5.3f}, UV Index: {:5.3f}'.format(air_sensor_value, readVisible, IR, UV, uvIndex))
+            setText('Temp: {:5.3f} Hum: {:5.3f} Pres: {:5.3f}, Air: {:5.3f}, Visible: {:5.3f}, IR: {:5.3f}, UV: {:5.3f}, UV Index: {:5.3f}'.format(temp_f, humidity, pressure, air_sensor_value, readVisible, IR, UV, uvIndex))
 
             # get the current minute
             current_minute = datetime.datetime.now().minute
