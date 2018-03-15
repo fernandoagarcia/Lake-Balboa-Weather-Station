@@ -61,9 +61,9 @@ def main():
         if (current_second == 0) or ((current_second % 5) == 0):
 
             # Read the temperature
-            temp_f = temp_hum_pr.get_temperature_fahrenheit()
+            temp_f = round(temp_hum_pr.get_temperature_fahrenheit())
             # Read the relative humidity
-            humidity = temp_hum_pr.get_humidity()
+            humidity = round(temp_hum_pr.get_humidity())
             # Read the pressure in pascals
             # https://www.metric-conversions.org/pressure/pascals-to-inches-of-mercury.htm
             pressure = round(temp_hum_pr.get_pressure() * 0.00029530)
