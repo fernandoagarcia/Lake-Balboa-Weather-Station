@@ -25,7 +25,7 @@ from config import Config
 # Constants
 # ============================================================================
 # specifies how often to measure values from the Sense HAT (in minutes)
-MEASUREMENT_INTERVAL = 10  # minutes
+MEASUREMENT_INTERVAL = 5  # minutes
 # Set to False when testing the code and/or hardware
 # Set to True to enable upload of weather data to Weather Underground
 WEATHER_UPLOAD = True
@@ -138,10 +138,11 @@ def main():
                             "action": "updateraw",
                             "ID": wu_station_id,
                             "PASSWORD": wu_station_key,
-                            "dateutc": "now",
+                            "dateutc": datetime.datetime.now(),
                             "tempf": str(temp_f),
                             "humidity": str(humidity),
-                            "pressurei": str(pressure),
+                            "baromin": str(pressure),
+                            "UV": str(uvIndex),
                         }
                         try:
                             #upload_url = WU_URL + "?" + urlencode(weather_data)
