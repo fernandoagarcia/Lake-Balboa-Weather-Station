@@ -61,9 +61,9 @@ def main():
         if (current_second == 0) or ((current_second % 5) == 0):
 
             # Read the temperature
-            temp_f = round(temp_hum_pr.get_temperature_fahrenheit())
+            temp_f = temp_hum_pr.get_temperature_fahrenheit()
             # Read the relative humidity
-            humidity = round(temp_hum_pr.get_humidity())
+            humidity = temp_hum_pr.get_humidity()
             # Read the pressure in pascals
             # https://www.metric-conversions.org/pressure/pascals-to-inches-of-mercury.htm
             pressure = round(temp_hum_pr.get_pressure() * 0.00029530)
@@ -82,6 +82,8 @@ def main():
             UV = ir_uv_sensor.readUV()
             uvIndex = UV / 100.0
 
+            print(temp_f)
+            print(humidity)
             print(pressure)
             setText('Temp: {:5.3f} Hum: {:5.3f} Pres: {:5.3f}, Air: {:5.3f}, Visible: {:5.3f}, IR: {:5.3f}, UV: {:5.3f}, UV Index: {:5.3f}'.format(temp_f, humidity, pressure, air_sensor_value, readVisible, IR, UV, uvIndex))
 
