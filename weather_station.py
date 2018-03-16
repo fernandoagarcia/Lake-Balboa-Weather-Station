@@ -129,6 +129,7 @@ def main():
                             'humidity': str(humidity),
                             'baromin': str(pressure),
                             'air': str(air_sensor_value),
+                            'visible': str(readVisible),
                             'ir': str(IR),
                             'uv': str(UV),
                             'uv_index': str(uvIndex),
@@ -137,11 +138,13 @@ def main():
                         }
 
                         weather_data = {
+                            "softwaretype": "RaspberryPi",
                             "action": "updateraw",
                             "ID": wu_station_id,
                             "PASSWORD": wu_station_key,
                             "dateutc": datetime.datetime.now(),
                             "tempf": str(temp_f),
+                            'solarradiation': str(readVisible),
                             "humidity": str(humidity),
                             "baromin": str(pressure),
                             "UV": str(uvIndex),
