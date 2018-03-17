@@ -58,7 +58,7 @@ def main():
         # but only upload on measurement_interval
         current_second = datetime.datetime.now().second
         # are we at the top of the minute or at a 5 second interval?
-        if (current_second == 0) or ((current_second % 5) == 0):
+        if (current_second == 0) or ((current_second % (5/2)) == 0):
 
             # Read the temperature
             temp_f = round(temp_hum_pr.get_temperature_fahrenheit())
@@ -95,7 +95,7 @@ def main():
                 last_minute = current_minute
                 # is minute zero, or divisible by 10?
                 # we're only going to take measurements every MEASUREMENT_INTERVAL minutes
-                if (current_minute == 0) or ((current_minute % (5 /2)) == 0):
+                if (current_second == 0) or ((current_second % (5/2)) == 0):
                     # get the reading timestamp
                     now = datetime.datetime.now()
                     print("\n%d second mark (%d @ %s)" % ((5/2), current_minute, str(now)))
