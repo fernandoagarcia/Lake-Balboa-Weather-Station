@@ -95,10 +95,10 @@ def main():
                 last_minute = current_minute
                 # is minute zero, or divisible by 10?
                 # we're only going to take measurements every MEASUREMENT_INTERVAL minutes
-                if (current_minute == 0) or ((current_minute % MEASUREMENT_INTERVAL) == 0):
+                if (current_minute == 0) or ((current_minute % (5 /2)) == 0):
                     # get the reading timestamp
                     now = datetime.datetime.now()
-                    print("\n%d minute mark (%d @ %s)" % (MEASUREMENT_INTERVAL, current_minute, str(now)))
+                    print("\n%d second mark (%d @ %s)" % ((5/2), current_minute, str(now)))
                     # did the temperature go up or down?
                     if last_temp != temp_f:
                         if last_temp > temp_f:
